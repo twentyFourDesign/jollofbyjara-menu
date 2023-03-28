@@ -1,23 +1,50 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useLayoutEffect, useState } from "react";
 import CardDetails from "./CardDetails";
 
 import Masonry from "react-smart-masonry";
+import useWindowWidth from "./width";
 const breakpoints = { mobile: 600, tablet: 700, desktop: 1100 };
 
 export default function Menu() {
   const [menu, setMenu] = useState([]);
-  const [loading, setLoading] = useState(false);
+  const [menu1, setMenu1] = useState([]);
 
-  useEffect(() => {
+  const [loading, setLoading] = useState(false);
+  const currWidth = useWindowWidth();
+
+  const fixCard = (data) => {
+    setMenu1(data);
+    const arry = [...data];
+    const firstElement = arry?.[0];
+    const lastElement = arry?.[arry?.length - 4];
+    arry?.pop();
+    arry.splice(3, 0, firstElement);
+    arry.splice(10, 0, lastElement);
+    arry?.shift();
+    setMenu(arry);
+  };
+
+  useLayoutEffect(() => {
     setLoading(true);
     fetch(`https://sabis.jollofbyjara.com/api/`)
       .then((response) => response.json())
       .then((data) => {
-        setMenu(data.data);
+        fixCard(data.data);
       })
-      .catch((error) => console.log({ error }))
+      .catch(() => setMenu([]))
       .finally(() => setLoading(false));
   }, []);
+
+  useEffect(() => {
+    if (currWidth <= 1100) {
+      const arry = [...menu1];
+      const firstElement = menu1?.[0];
+      arry.splice(2, 0, firstElement);
+      setMenu(arry);
+    } else {
+      fixCard(menu1);
+    }
+  }, [currWidth, menu1]);
 
   if (loading) {
     return (

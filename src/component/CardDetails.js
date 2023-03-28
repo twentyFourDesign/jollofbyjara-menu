@@ -13,7 +13,7 @@ const List = ({ items, title }) => {
     setOpenModal(!openModal);
   };
 
-  console.log({ items });
+  
 
   useEffect(() => {
     if (openModal) {
