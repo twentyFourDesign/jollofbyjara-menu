@@ -19,9 +19,10 @@ export default function Menu() {
     const lastElement = arry?.[arry?.length - 4];
     arry?.pop();
     arry.splice(3, 0, firstElement);
-    arry.splice(10, 0, lastElement);
+    arry.splice(11, 0, lastElement);
     arry?.shift();
     setMenu(arry);
+    console.log(menu)
   };
 
   useLayoutEffect(() => {
@@ -30,6 +31,7 @@ export default function Menu() {
       .then((response) => response.json())
       .then((data) => {
         fixCard(data.data);
+        // console.log(data.data)
       })
       .catch(() => setMenu([]))
       .finally(() => setLoading(false));
@@ -39,6 +41,7 @@ export default function Menu() {
     if (currWidth <= 1100) {
       const arry = [...menu1];
       const firstElement = menu1?.[0];
+      console.log(firstElement)
       arry.splice(2, 0, firstElement);
       setMenu(arry);
     } else {
@@ -56,13 +59,14 @@ export default function Menu() {
   return (
     <div className="testing">
       <Masonry
+      autoArrange={true}
         breakpoints={breakpoints}
         columns={{ mobile: 1, tablet: 2, desktop: 3 }}
         gap={{ mobile: 20, tablet: 30, desktop: 40 }}
       >
         {menu?.length ? (
-          menu?.map((item) => (
-            <CardDetails title={item.title} items={item.data} />
+          menu?.map((item , idx) => (
+            <CardDetails title={item.title} items={item.data} key={idx} />
           ))
         ) : (
           <h2 className="data-notfound">Menu Not Found</h2>
