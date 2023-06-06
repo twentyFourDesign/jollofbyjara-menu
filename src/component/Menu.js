@@ -19,10 +19,9 @@ export default function Menu() {
     const lastElement = arry?.[arry?.length - 4];
     arry?.pop();
     arry.splice(3, 0, firstElement);
-    arry.splice(11, 0, lastElement);
+    arry.splice(10, 0, lastElement);
     arry?.shift();
     setMenu(arry);
-    console.log(menu)
   };
 
   useLayoutEffect(() => {
@@ -31,7 +30,6 @@ export default function Menu() {
       .then((response) => response.json())
       .then((data) => {
         fixCard(data.data);
-        // console.log(data.data)
       })
       .catch(() => setMenu([]))
       .finally(() => setLoading(false));
@@ -41,7 +39,6 @@ export default function Menu() {
     if (currWidth <= 1100) {
       const arry = [...menu1];
       const firstElement = menu1?.[0];
-      console.log(firstElement)
       arry.splice(2, 0, firstElement);
       setMenu(arry);
     } else {
