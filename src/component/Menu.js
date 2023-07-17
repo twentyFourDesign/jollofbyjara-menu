@@ -40,6 +40,11 @@ export default function Menu() {
       const arry = [...menu1];
       const firstElement = menu1?.[0];
       arry.splice(2, 0, firstElement);
+      arry.filter(
+        (arr) =>
+          arr.title.toUpperCase() !==
+          "EXTERNAL EVENT CATERING (24HRS NOTICE REQUIRED)"
+      );
       setMenu(arry);
     } else {
       fixCard(menu1);
@@ -56,15 +61,21 @@ export default function Menu() {
   return (
     <div className="testing">
       <Masonry
-      autoArrange={true}
+        autoArrange={true}
         breakpoints={breakpoints}
         columns={{ mobile: 1, tablet: 2, desktop: 3 }}
         gap={{ mobile: 20, tablet: 30, desktop: 40 }}
       >
         {menu?.length ? (
-          menu?.map((item , idx) => (
-            <CardDetails title={item.title} items={item.data} key={idx} />
-          ))
+          menu
+            ?.filter(
+              (item) =>
+                item.title.toUpperCase() !==
+                "EXTERNAL EVENT CATERING (24HRS NOTICE REQUIRED)"
+            )
+            .map((item, idx) => (
+              <CardDetails title={item.title} items={item.data} key={idx} />
+            ))
         ) : (
           <h2 className="data-notfound">Menu Not Found</h2>
         )}
