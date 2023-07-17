@@ -11,8 +11,6 @@ function Main() {
     <div>
       <Header />
       <Menu />
-      <TakeOutDeliveryComponent />
-      <MachineInfoComponent />
       <FoodDetails />
       <Footer />
     </div>
