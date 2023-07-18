@@ -73,8 +73,8 @@ export default function Menu() {
                 item?.title?.toUpperCase() !==
                 "EXTERNAL EVENT CATERING (24HRS NOTICE REQUIRED)"
             )
-            .map((item, idx) => (
-              <CardDetails title={item.title} items={item.data} key={idx} />
+            ?.map((item, idx) => (
+              <CardDetails title={item?.title} items={item?.data} key={idx} />
             ))
         ) : (
           <h2 className="data-notfound">Menu Not Found</h2>
