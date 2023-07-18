@@ -70,7 +70,7 @@ export default function Menu() {
           menu
             ?.filter(
               (item) =>
-                item.title?.toUpperCase() !==
+                item?.title?.toUpperCase() !==
                 "EXTERNAL EVENT CATERING (24HRS NOTICE REQUIRED)"
             )
             .map((item, idx) => (
