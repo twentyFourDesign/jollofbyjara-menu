@@ -40,11 +40,6 @@ export default function Menu() {
       const arry = [...menu1];
       const firstElement = menu1?.[0];
       arry.splice(2, 0, firstElement);
-      arry.filter(
-        (arr) =>
-          arr.title.toUpperCase() !==
-          "EXTERNAL EVENT CATERING (24HRS NOTICE REQUIRED)"
-      );
       setMenu(arry);
     } else {
       fixCard(menu1);
