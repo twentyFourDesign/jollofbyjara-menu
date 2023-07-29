@@ -8,21 +8,17 @@ export default function FoodDetails() {
         <img className="food-image" src={FoodImage} alt="foodpicture" />
       </div>
       <div className="food-details-container">
-        <h2>
-          PUTTING THE <span>jara</span> IN THE JOLLOF
+        <h2>Catering (for External Events)
+
         </h2>
         <p>
-          Little Company Nigeria Limited is committed to providing great-value,
-          memorable experiences. For those of you familiar with our brands,
-          you’ll know we do things a little differently. Jollof is no exception.
+          This mouth-watering array of catering trays applies to external orders requested 24 hours in advance - only. Perfect for your at-home celebration, office lunch, meal prep at home and many more! Catering options are served in trays and discounted for that extra jara value. <br />
+          Please note, this menu cannot be used for in-restaurant dining.
+
         </p>
+
         <p>
-          Jollof by Jara customers are welcome to FREE Wi-Fi (access token
-          available at the Bar), FREE drinking water! It’s table water, the kind
-          from a dispenser - clean and safe (alternatively branded bottled water
-          is available to purchase through SABIS) and we even offer an
-          experienced member of staff to entertain your little ones in the
-          playground while you relax at NO EXTRA COST!
+          We ask for a minimum of 24 hours notice for your catered order to be collected / delivered. Order via <br/> Whatsapp (+234 808 061 0290),<br/> Email (bookings@jollofbyjara.com) or <br/> phone (+234 808 061 0290).
         </p>
       </div>
     </div>

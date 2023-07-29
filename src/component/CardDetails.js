@@ -33,11 +33,11 @@ const List = ({ items, title }) => {
             className="list-item"
             onClick={() => handleItemClick(item)}
           >
-            <div className="item-name">{item.title}</div>
+            <div className="item-name">{item?.title}</div>
             <div className="item-line">
               <hr></hr>
             </div>
-            <div className="item-price">{item.price}</div>
+            <div className="item-price">{item?.price?.toLocaleString()}</div>
           </div>
         ))}
       </div>
