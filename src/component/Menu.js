@@ -40,6 +40,7 @@ export default function Menu() {
       const arry = [...menu1];
       const firstElement = menu1?.[0];
       arry.splice(2, 0, firstElement);
+      arry.shift();
       setMenu(arry);
     } else {
       fixCard(menu1);
