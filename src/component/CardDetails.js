@@ -37,7 +37,7 @@ const List = ({ items, title }) => {
             <div className="item-line">
               <hr></hr>
             </div>
-            <div className="item-price">{item.price}</div>
+            <div className="item-price">{item?.price?.toLocaleString()}</div>
           </div>
         ))}
       </div>
