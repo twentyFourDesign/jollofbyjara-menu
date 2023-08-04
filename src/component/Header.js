@@ -11,6 +11,7 @@ function Header() {
       </div>
       <div className="menu-container">
         <h1 className="menu">MENU</h1>
+        <p className="menu-description">Click on the menu text for picture and description</p>
       </div>
     </div>
   );
