@@ -27,7 +27,7 @@ const List = ({ items, title }) => {
     <div className="details-container">
       <div className="details-header">{title}</div>
       <div className="list-container">
-        {items.map((item, index) => (
+        {items?.map((item, index) => (
           <div
             key={index}
             className="list-item"
