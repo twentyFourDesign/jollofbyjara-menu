@@ -7,7 +7,7 @@ function Footer() {
     <div>
       <div className="small-footer">
         <p>
-          <b>OPEN: </b>MONDAY-SUNDAY 10AM-10PM 
+          <b>OPEN: </b>SUN-THURS:10AM-10PM | FRI & SAT: 12PM-12AM
         </p>
       </div>
       <div className="footer-container">
