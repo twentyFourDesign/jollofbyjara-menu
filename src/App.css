@@ -676,16 +676,4 @@ ul {
   }
 }
 
-.menu-description {
-  position: absolute;
-  width: 100%;
-}
 
-@media only screen and (max-width: 650px) {
-  .menu-description {
-    left: 50%;
-    transform: translate(-50%, 0);
-    text-align: center;
-    padding-top: 100px;
-  }
-}
