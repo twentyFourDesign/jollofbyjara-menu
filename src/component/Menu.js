@@ -12,40 +12,44 @@ export default function Menu() {
   const [loading, setLoading] = useState(false);
   const currWidth = useWindowWidth();
 
-  const fixCard = (data) => {
-    setMenu1(data);
-    const arry = [...data];
-    const firstElement = arry?.[0];
-    const lastElement = arry?.[arry?.length - 4];
-    arry?.pop();
-    arry.splice(3, 0, firstElement);
-    arry.splice(10, 0, lastElement);
-    arry?.shift();
-    setMenu(arry);
-  };
+  // const fixCard = (data) => {
+  //   setMenu1(data);
+  //   const arry = [...data];
+  //   const firstElement = arry?.[0];
+  //   const lastElement = arry?.[arry?.length - 4];
+  //   arry?.pop();
+  //   arry.splice(3, 0, firstElement);
+  //   arry.splice(10, 0, lastElement);
+  //   arry?.shift();
+  //   setMenu(arry);
+  // };
 
   useLayoutEffect(() => {
     setLoading(true);
     fetch(`https://sabis.jollofbyjara.com/api/`)
       .then((response) => response.json())
       .then((data) => {
-        fixCard(data.data);
+        setMenu(data.data);
       })
       .catch(() => setMenu([]))
       .finally(() => setLoading(false));
   }, []);
 
-  useEffect(() => {
-    if (currWidth <= 1100) {
-      const arry = [...menu1];
-      const firstElement = menu1?.[0];
-      arry.splice(2, 0, firstElement);
-      arry.shift();
-      setMenu(arry);
-    } else {
-      fixCard(menu1);
-    }
-  }, [currWidth, menu1]);
+  // useEffect(() => {
+  //   if (currWidth <= 1100) {
+  //     const arry = [...menu1];
+  //     const firstElement = menu1?.[0];
+  //     arry.splice(2, 0, firstElement);
+  //     arry.filter(
+  //       (arr) =>
+  //         arr.title.toUpperCase() !==
+  //         "EXTERNAL EVENT CATERING (24HRS NOTICE REQUIRED)"
+  //     );
+  //     setMenu(arry);
+  //   } else {
+  //     fixCard(menu1);
+  //   }
+  // }, [currWidth, menu1]);
 
   if (loading) {
     return (
@@ -66,11 +70,11 @@ export default function Menu() {
           menu
             ?.filter(
               (item) =>
-                item?.title?.toUpperCase() !==
+                item.title.toUpperCase() !==
                 "EXTERNAL EVENT CATERING (24HRS NOTICE REQUIRED)"
             )
-            ?.map((item, idx) => (
-              <CardDetails title={item?.title} items={item?.data} key={idx} />
+            .map((item, idx) => (
+              <CardDetails title={item.title} items={item.data} key={idx} />
             ))
         ) : (
           <h2 className="data-notfound">Menu Not Found</h2>
