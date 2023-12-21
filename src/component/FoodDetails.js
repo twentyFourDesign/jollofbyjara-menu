@@ -8,16 +8,18 @@ export default function FoodDetails() {
         <img className="food-image" src={FoodImage} alt="foodpicture" />
       </div>
       <div className="food-details-container">
-        <h2>
-          PUTTING THE <span>jara</span> IN THE JOLLOF
+        <h2> PUTTING THE <span>jara</span> IN THE JOLLOF
+
         </h2>
         <p>
           Little Company Nigeria Limited is committed to providing great-value,
           memorable experiences. For those of you familiar with our brands,
           you’ll know we do things a little differently. Jollof is no exception.
+
         </p>
+
         <p>
-          Jollof by Jara customers are welcome to FREE Wi-Fi (access token
+              Jollof by Jara customers are welcome to FREE Wi-Fi (access token
           available at the Bar), FREE drinking water! It’s table water, the kind
           from a dispenser - clean and safe (alternatively branded bottled water
           is available to purchase through SABIS) and we even offer an
@@ -28,3 +30,5 @@ export default function FoodDetails() {
     </div>
   );
 }
+
+
