@@ -1,28 +1,19 @@
-import React, { useEffect, useLayoutEffect, useState } from "react";
+import React, { useLayoutEffect, useState } from "react";
 import CardDetails from "./CardDetails";
-
 import Masonry from "react-smart-masonry";
-import useWindowWidth from "./width";
 const breakpoints = { mobile: 600, tablet: 700, desktop: 1100 };
 
 export default function Menu() {
   const [menu, setMenu] = useState([]);
-  const [menu1, setMenu1] = useState([]);
-
   const [loading, setLoading] = useState(false);
-  const currWidth = useWindowWidth();
 
-  // const fixCard = (data) => {
-  //   setMenu1(data);
-  //   const arry = [...data];
-  //   const firstElement = arry?.[0];
-  //   const lastElement = arry?.[arry?.length - 4];
-  //   arry?.pop();
-  //   arry.splice(3, 0, firstElement);
-  //   arry.splice(10, 0, lastElement);
-  //   arry?.shift();
-  //   setMenu(arry);
-  // };
+  const desiredOrder = [
+    'Brunch','Curated Combos','Meats and Fish','Stews','Naija Bowls (made for one)',
+    'Rice','Sides','Snack Warmer / To Go','Snacks','Street Food','Specials',
+    'Soups','With ❤️ from Jara Beach Resort',"Mya's Menu (Children's)",'Desserts',
+    'Beer / Cider / Bitters','Cocktails','Mocktails','Hot Drinks','Premium Collection',
+    'Soft Drinks','Spirits','Wine','Other - Restaurant','Other','Gifts','Art'
+  ];
 
   useLayoutEffect(() => {
     setLoading(true);
@@ -35,29 +26,12 @@ export default function Menu() {
       .finally(() => setLoading(false));
   }, []);
 
-  // useEffect(() => {
-  //   if (currWidth <= 1100) {
-  //     const arry = [...menu1];
-  //     const firstElement = menu1?.[0];
-  //     arry.splice(2, 0, firstElement);
-  //     arry.filter(
-  //       (arr) =>
-  //         arr.title.toUpperCase() !==
-  //         "EXTERNAL EVENT CATERING (24HRS NOTICE REQUIRED)"
-  //     );
-  //     setMenu(arry);
-  //   } else {
-  //     fixCard(menu1);
-  //   }
-  // }, [currWidth, menu1]);
+  const sortedMenu = menu.sort(
+    (a, b) => desiredOrder.indexOf(a.title) - desiredOrder.indexOf(b.title)
+  );
 
-  if (loading) {
-    return (
-      <div className="testing">
-        <h2 className="data-notfound">Loading...</h2>
-      </div>
-    );
-  }
+  console.log(sortedMenu)
+
   return (
     <div className="testing">
       <Masonry
@@ -66,8 +40,8 @@ export default function Menu() {
         columns={{ mobile: 1, tablet: 2, desktop: 3 }}
         gap={{ mobile: 20, tablet: 30, desktop: 40 }}
       >
-        {menu?.length ? (
-          menu
+        {sortedMenu?.length ? (
+          sortedMenu
             ?.filter(
               (item) =>
                 item.title.toUpperCase() !==
@@ -83,3 +57,4 @@ export default function Menu() {
     </div>
   );
 }
+
