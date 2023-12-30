@@ -17,7 +17,7 @@ export default function Menu() {
 
   useLayoutEffect(() => {
     setLoading(true);
-    fetch(`https://sabis.jollofbyjara.com/api/v1`)
+    fetch(`https://sabis.jollofbyjara.com/api`)
       .then((response) => response.json())
       .then((data) => {
         setMenu(data.data);
