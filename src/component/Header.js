@@ -1,6 +1,6 @@
 import React from "react";
 import logo from "../image/Jollof by Jara 1.png";
-import HeroImage from "../image/hero.jpg";
+import HeroImage from "../image/hero2.jpg";
 
 function Header() {
   return (
