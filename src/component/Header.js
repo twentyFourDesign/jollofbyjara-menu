@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "../image/Jollof by Jara 1.png";
+// import logo from "../image/Jollof by Jara 1.png";
 import HeroImage from "../image/hero2.jpg";
 
 function Header() {
@@ -17,12 +17,18 @@ function Header() {
     //   </div>
     // </div>
 
-    <div style={{overflow:"hidden"}}>
-      <img src={HeroImage} alt="" style={{width:"100vw",height:"100%"}}/>
+    <div style={{ overflow: "hidden" }}>
+      <img src={HeroImage} alt="" style={{ width: "100vw", height: "100%" }} />
+      <div style={{display:"flex",justifyContent:"center","alignItems":"center",flexDirection:"column"}}>
+        <h1 style={{marginTop:"1rem",textAlign:"center"}}>MENU</h1>
+        <p style={{ marginTop: "1rem", color: "black",textAlign:"center" }}>Jollof By Jara will be reopening for 2024 on Wedenesday 10th January</p>
+        <p style={{ marginTop: "10px", color: "black",textAlign:"center" }}>While we apologize for any inconvenience, we have Lots of exciting thing for you</p>
+      </div>
     </div>
   );
 }
 
 export default Header;
+
 
 
