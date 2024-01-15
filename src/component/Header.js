@@ -20,8 +20,7 @@ function Header() {
     <div style={{ overflow: "hidden" }}>
       <img src={HeroImage} alt="" style={{ width: "100vw", height: "100%" }} />
       <div style={{display:"flex",justifyContent:"center","alignItems":"center",flexDirection:"column"}}>
-        <h1 style={{marginTop:"1rem",textAlign:"center"}}>Click on the Menu text for price and description</h1>
-        <p style={{ marginTop: "1rem", color: "black",textAlign:"center" }}>Most dishes are served 'family style' designed for sharing!</p>
+        <h style={{marginTop:"1rem",textAlign:"center",fontSize:"1.5rem"}}>Click on the Menu text for price and description</h>
         <p style={{ marginTop: "10px", color: "black",textAlign:"center" }}>Price exclude 5% Consumption Tax (LIRS), 7.5% VAT (FIRS) + 2.5% Service Charge</p>
       </div>
     </div>
