@@ -107,6 +107,7 @@
   height: 365px;
   border-radius: 5px;
   padding: 5px;
+  object-fit: contain;
 }
 .selected-list-item {
   display: flex;
