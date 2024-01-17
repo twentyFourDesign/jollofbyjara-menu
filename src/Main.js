@@ -7,14 +7,14 @@ import Menu from "./component/Menu";
 import TakeOutDeliveryComponent from "./component/TakeOutDeliveryComponent";
 
 function Main() {
-  return (
-    <div>
-      <Header />
-      <Menu />
-      <FoodDetails />
-      <Footer />
-    </div>
-  );
+    return (
+        <div>
+            <Header/>
+            <Menu/>
+            <FoodDetails/>
+            <Footer/>
+        </div>
+    );
 }
 
 export default Main;
