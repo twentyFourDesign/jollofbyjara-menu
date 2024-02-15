@@ -10,11 +10,28 @@ export default function Menu() {
 
 
     const desireOrder = [
-        "Brunch", "Starters / Small Plates", "West African Specials", "Mains",
-        "Sides", "Made for Sharing", "Mya’s Menu (Children's)", "Desserts",
-        "SOFT DRINKS", "MOCKTAILS", "COCKTAILS", "Cocktails (alc)", "Mocktails (non-alc)", "BEER / CIDER / BITTERS",
-        "WINE", "SPIRITS", "PREMIUM COLLECTION", "HOT DRINKS", "OTHER - RESTAURANT",
-        "DELIVERY", "VOUCHERS", "GIFTS", "ART"
+        "Brunch",
+        "Starters / Small Plates",
+        "West African Specials",
+        "Mains",
+        "Sides",
+        "Made for Sharing",
+        "Mya’s Menu (Children's)", "Desserts",
+        "SOFT DRINKS",
+        "MOCKTAILS",
+        "COCKTAILS",
+        "Cocktails (alc)",
+        "Mocktails (non-alc)",
+        "BEER / CIDER / BITTERS",
+        "WINE",
+        "SPIRITS",
+        "PREMIUM COLLECTION",
+        "HOT DRINKS",
+        "OTHER - RESTAURANT",
+        "DELIVERY",
+        "VOUCHERS",
+        "GIFTS",
+        "ART"
     ];
     useLayoutEffect(() => {
         setLoading(true);
