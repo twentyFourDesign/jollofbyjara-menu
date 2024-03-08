@@ -1,4 +1,4 @@
-import React, {useLayoutEffect, useState} from "react";
+import React, {useEffect, useState} from "react";
 import CardDetails from "./CardDetails";
 import Masonry from "react-smart-masonry";
 
@@ -33,39 +33,32 @@ export default function Menu() {
         "GIFTS",
         "ART"
     ];
-    useLayoutEffect(() => {
+    const toHide = [
+        'External Event Catering (24hrs notice required)'
+    ];
+
+    async function fetchAndSortData() {
+        const apiResponse = await fetch(`https://sabis.jollofbyjara.com/api/`);
+        const apiData = await apiResponse.json();
+        let combinedData = [];
+        for (const apiItem of apiData.data) {
+            const index = desireOrder.map(item => item.toLowerCase()).indexOf(apiItem.title.toLowerCase())
+            if (index > -1) {
+                combinedData.push({...apiItem, sort: index})
+            } else {
+                combinedData.push({...apiItem, sort: 10000})
+            }
+        }
+
+        const sorted = combinedData.filter((item) => {
+            return !(toHide.map(item => item.toLowerCase()).indexOf(item.title.toLowerCase()) > -1)
+        }).sort((a, b) => a.sort - b.sort)
+        setMenu(sorted);
+    }
+
+    useEffect(() => {
         setLoading(true);
 
-        async function fetchAndSortData() {
-            const apiResponse = await fetch(`https://sabis.jollofbyjara.com/api/`);
-            const apiData = await apiResponse.json();
-            const combinedData = [];
-
-            for (const apiItem of apiData.data) {
-                const index = desireOrder.map(item=> item.toLowerCase()).indexOf(apiItem.title.toLowerCase())
-                if (index > -1) {
-                    combinedData.splice(index, 0, apiItem)
-                } else {
-                    combinedData.push(apiItem)
-                }
-            }
-
-            // for (const sortedItem of desireOrder) {
-            //     for (const apiItem of apiData.data) {
-            //         if (sortedItem.toLowerCase() === apiItem.title.toLowerCase()) {
-            //             combinedData.push({...apiItem, category: sortedItem});
-            //         } else {
-            //             // Uncomment the following line if you want to log items that don't match any category
-            //             // console.log(apiItem, 'else');
-            //         }
-            //     }
-            // }
-
-
-            // combinedData.sort((a, b) => a.title.localeCompare(b.title));
-
-            setMenu(combinedData);
-        }
 
         fetchAndSortData()
             .catch(() => setMenu([]))
