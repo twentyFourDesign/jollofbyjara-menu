@@ -1,33 +1,24 @@
 import React from "react";
-// import logo from "../image/Jollof by Jara 1.png";
-import HeroImage from "../image/hero2.jpg";
+import logo from "../image/Jollof by Jara 1.png";
+import HeaderImage from "../image/header.jpg";
 
 function Header() {
   return (
-    // <div className="header-container">
-    //   <div className="image-container">
-    //     <a href="https://www.jollofbyjara.com/">
-    //     <img className="header-image" src={logo} alt="logo" />
-    //     </a>
-    //   </div>
-    //   <div className="menu-container">
-    //     <h1 className="menu">MENU</h1>
-    //     <p style={{marginTop:"1rem",color:"white"}}>Jollof By Jara will be reopening for 2024 on Wedenesday 10th January</p>
-    //     <p style={{marginTop:"10px",color:"white"}}>While we apologize for any inconvenience, we have Lots of exciting thing for you</p>
-    //   </div>
-    // </div>
-
-    <div style={{ overflow: "hidden" }}>
-      <img src={HeroImage} alt="" style={{ width: "100vw", height: "100%" }} />
-      <div style={{display:"flex",justifyContent:"center","alignItems":"center",flexDirection:"column"}}>
-        <h style={{marginTop:"1rem",textAlign:"center",fontSize:"1.5rem"}}>Click on the Menu text for price and description</h>
-        <p style={{ marginTop: "10px", color: "black",textAlign:"center" }}>Price exclude 5% Consumption Tax (LIRS), 7.5% VAT (FIRS) + 2.5% Service Charge</p>
+    <div className="ufff">
+      {/* <div className="image-container">
+        <a href="https://www.jollofbyjara.com/">
+        <img className="header-image" src={logo} alt="logo" />
+        </a>
       </div>
+      <div className="menu-container">
+        <h1 className="menu">MENU</h1>
+        <p className="menu-description">Click on the menu text for picture and description</p>
+        <p style={{marginTop:"1rem",color:"white"}}>Most dishes are served 'family style' designed for sharing!</p>
+        <p style={{marginTop:"10px",color:"white"}}>Prices exclude 5% Consumption Tax (LIRS), 7.5% VAT (FIRS) + 2.5% Service Charge</p>
+      </div> */}
+      <img src={HeaderImage} alt="header" className="header-image"/>
     </div>
   );
 }
 
 export default Header;
-
-
-
