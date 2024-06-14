@@ -22,6 +22,15 @@
   background-color: #f5f5f5;
 }
 
+.ufff{
+  overflow: hidden;
+}
+.header-image{
+  width: 100vw;
+  /* height: 20rem; */
+  height: 20rem;
+}
+
 .container {
   padding-left: 30px;
   padding-right: 30px;
