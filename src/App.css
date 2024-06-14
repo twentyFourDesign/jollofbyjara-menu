@@ -26,7 +26,14 @@
   padding-left: 30px;
   padding-right: 30px;
 }
-
+.ufff{
+  overflow: hidden;
+}
+.header-image{
+  width: 100vw;
+  /* height: 20rem; */
+  height: 20rem;
+}
 .header-container {
   position: relative;
   max-width: 1440px;
