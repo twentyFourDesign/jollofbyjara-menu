@@ -27,7 +27,6 @@
 }
 .header-image{
   width: 100vw;
-  /* height: 20rem; */
   height: 20rem;
 }
 
@@ -55,11 +54,6 @@
 }
 .menu-container {
   flex-grow: 2;
-}
-
-.header-image {
-  width: 160px;
-  height: 160px;
 }
 
 /* list style */
